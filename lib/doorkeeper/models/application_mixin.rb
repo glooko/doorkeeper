@@ -8,6 +8,7 @@ module Doorkeeper
     include Models::Orderable
     include Models::SecretStorable
     include Models::Scopes
+    include ActiveModel::MassAssignmentSecurity if defined?(::ProtectedAttributes)
 
     # :nodoc
     module ClassMethods

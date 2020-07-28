@@ -12,6 +12,7 @@ module Doorkeeper
     include Models::SecretStorable
     include Models::Scopes
     include Models::ResourceOwnerable
+    include ActiveModel::MassAssignmentSecurity if defined?(::ProtectedAttributes)
 
     # Never uses PKCE if PKCE migrations were not generated
     def uses_pkce?

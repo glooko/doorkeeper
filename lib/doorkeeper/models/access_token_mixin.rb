@@ -13,6 +13,7 @@ module Doorkeeper
     include Models::SecretStorable
     include Models::Scopes
     include Models::ResourceOwnerable
+    include ActiveModel::MassAssignmentSecurity if defined?(::ProtectedAttributes)
 
     module ClassMethods
       # Returns an instance of the Doorkeeper::AccessToken with
